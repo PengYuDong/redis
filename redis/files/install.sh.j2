@@ -1,0 +1,5 @@
+#! /bin/bash
+
+cd /usr/src/redis-{{ pillar['redis_version'] }}
+make MALLOC=libc USE_SYSTEMD=yes && \
+make install PREFIX={{ pillar['redis_install_dir'] }}
